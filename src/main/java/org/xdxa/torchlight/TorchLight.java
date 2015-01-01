@@ -177,7 +177,7 @@ public class TorchLight extends JavaPlugin implements Listener {
         final TorchLightPlayer torchLightPlayer = torchLightPlayers.get(player);
         if (torchLightPlayer != null && torchLightPlayer.getPreviousLocation() != null) {
             player.sendBlockChange(torchLightPlayer.getPreviousLocation(),
-                                   torchLightPlayer.getPreviousBlock(),
+                                   torchLightPlayer.getPreviousBlockMaterialId(),
                                    torchLightPlayer.getPreviousBlockData());
         }
     }
