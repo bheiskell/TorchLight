@@ -2,8 +2,6 @@ package org.xdxa.torchlight;
 
 import java.util.Map;
 
-import javax.annotation.Nullable;
-
 import org.bukkit.Material;
 import org.bukkit.configuration.serialization.ConfigurationSerializable;
 
@@ -80,7 +78,6 @@ public class LightConfiguration implements ConfigurationSerializable {
      * Get the item in hand which will activate the light block.
      * @return the item or null
      */
-    @Nullable
     public Material getItem() {
         return item;
     }
@@ -89,7 +86,6 @@ public class LightConfiguration implements ConfigurationSerializable {
      * Get the helmet which can be worn to activate the light block.
      * @return the helmet or null
      */
-    @Nullable
     public Material getHelmet() {
         return helmet;
     }
@@ -98,7 +94,6 @@ public class LightConfiguration implements ConfigurationSerializable {
      * Get the boot which can be worn to activate the light block.
      * @return the boot or null
      */
-    @Nullable
     public Material getBoot() {
         return boot;
     }
