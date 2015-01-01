@@ -2,9 +2,9 @@
   <modelVersion>4.0.0</modelVersion>
   <groupId>org.xdxa</groupId>
   <artifactId>torchlight</artifactId>
-  <version>0.0.1-SNAPSHOT</version>
+  <version>0.0.2-SNAPSHOT</version>
   <name>TorchLight</name>
-  <url>http://xdxa.org</url>
+  <url>https://www.github.com/bheiskell/TorchLight</url>
   <properties>
     <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
   </properties>

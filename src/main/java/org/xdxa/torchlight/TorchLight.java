@@ -106,8 +106,13 @@ public class TorchLight extends JavaPlugin implements Listener {
         }
 
         final Location location = getPlayersLightBlockLocation(player);
-        final World world = location.getWorld();
-        final Block block = world.getBlockAt(location);
+        final Block block = location.getBlock();
+        final Location blockLocation = block.getLocation();
+
+        // If the player's light block has not changed, short-circuit to avoid flickering
+        if (blockLocation.equals(torchLightPlayer.getPreviousLocation())) {
+            return;
+        }
 
         resetPreviousBlock(player);
 
@@ -126,9 +131,9 @@ public class TorchLight extends JavaPlugin implements Listener {
             if (isHoldingItem || isWearingHelmet || isWearingBoots) {
                 torchLightPlayer.setPreviousBlockMaterialId(block.getTypeId());
                 torchLightPlayer.setPreviousBlockData(block.getData());
-                torchLightPlayer.setPreviousLocation(location);
+                torchLightPlayer.setPreviousLocation(blockLocation);
 
-                player.sendBlockChange(location, light.getLightBlock(), light.getLightMeta());
+                player.sendBlockChange(blockLocation, light.getLightBlock(), light.getLightMeta());
                 return;
             }
         }
